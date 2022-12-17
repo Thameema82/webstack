@@ -10,18 +10,21 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-//import com.google.firebase.database.DataSnapshot;
-//import com.google.firebase.database.DatabaseError;
-//import com.google.firebase.database.DatabaseReference;
-//import com.google.firebase.database.FirebaseDatabase;
-//import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CategoriesActivity extends AppCompatActivity {
-//    FirebaseDatabase database = FirebaseDatabase.getInstance();
-//    DatabaseReference myRef = database.getReference();
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
 
     private RecyclerView recyclerView;
     private  List<CategoryModel> list;
@@ -43,28 +46,26 @@ public class CategoriesActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         list = new ArrayList<>();
-        list.add(new CategoryModel("","category1"));
-        list.add(new CategoryModel("","category1"));
-        list.add(new CategoryModel("","category1"));
-        list.add(new CategoryModel("","category1"));
 
         CategoryAdapter adapter = new CategoryAdapter(list);
         recyclerView.setAdapter(adapter);
 
-//        myRef.child("Categories").addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//               for(DataSnapshot dataSnapshot1 : snapshot.getChildren()){
-//                 list.add(dataSnapshot1.getValue(CategoryModel.class));
-//               }
-//               adapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//                Toast.makeText(CategoriesActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
+
+
+        myRef.child("Categories").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+               for(DataSnapshot dataSnapshot1 : snapshot.getChildren()){
+                 list.add(dataSnapshot1.getValue(CategoryModel.class));
+               }
+               adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(CategoriesActivity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

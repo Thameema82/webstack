@@ -1,27 +1,41 @@
 package com.example.stack;
 
 public class CategoryModel {
-    private String imageurl;
-    private String title;
+    private String name;
+    private int sets;
+    private String url;
 
-    public CategoryModel(String imageurl, String title) {
-        this.imageurl = imageurl;
-        this.title = title;
+    public CategoryModel(){
+        //for firebase
     }
 
-    public String getImageurl() {
-        return imageurl;
+    public CategoryModel(String name, int sets, String url) {
+        this.name = name;
+        this.sets = sets;
+        this.url = url;
     }
 
-    public void setImageurl(String imageurl) {
-        this.imageurl = imageurl;
+    public String getName() {
+        return name;
     }
 
-    public String getTitle() {
-        return title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public int getSets() {
+        return sets;
+    }
+
+    public void setSets(int sets) {
+        this.sets = sets;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

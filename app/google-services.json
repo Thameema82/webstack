@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "90496477363",
+    "project_id": "webstack-df511",
+    "storage_bucket": "webstack-df511.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90496477363:android:f6a16e4af2466d5c4be8c6",
+        "android_client_info": {
+          "package_name": "com.example.stack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90496477363-3a2qbl2b4fu83jrklcj64uqb44fasfek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY_IJYDLu7BqdtnPCFFE7QCRDV4uDWoOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90496477363-3a2qbl2b4fu83jrklcj64uqb44fasfek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

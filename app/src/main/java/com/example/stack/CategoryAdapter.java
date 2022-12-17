@@ -32,7 +32,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Viewho
 
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
-        holder.setData(categoryModelList.get(position).getImageurl(),categoryModelList.get(position).getTitle());
+        holder.setData(categoryModelList.get(position).getUrl(),categoryModelList.get(position).getName());
 
     }
 
